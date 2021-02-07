@@ -1,4 +1,3 @@
-
 #meal-image {
     width: 100%
 }
@@ -9,4 +8,5 @@
 
 #search-result {
     display: none;
+    margin-top: 50px;
 }
