@@ -1,0 +1,12 @@
+
+#meal-image {
+    width: 100%
+}
+
+.item-container {
+    border-radius: 20px;
+}
+
+#search-result {
+    display: none;
+}
