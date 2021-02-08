@@ -1,3 +1,4 @@
+// home page, food items
 fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
     .then(res => res.json())
     .then(data => displayMeals(data));
@@ -6,7 +7,7 @@ const displayMeals = data => {
     console.log(data);
     const mealDiv = document.getElementById("mealDb");
     for (let i = 0; i < data.meals.length; i++) {
-        const meal = data.meals[i];
+        
         document.getElementById("itemMenuImg1").src = data.meals[0].strMealThumb;
         document.getElementById("itemMenuTitle1").innerText = data.meals[0].strMeal;
         document.getElementById("itemMenuImg2").src = data.meals[1].strMealThumb;
@@ -25,11 +26,11 @@ const displayMeals = data => {
         document.getElementById("itemMenuTitle8").innerText = data.meals[7].strMeal;
         document.getElementById("itemMenuImg9").src = data.meals[8].strMealThumb;
         document.getElementById("itemMenuTitle9").innerText = data.meals[8].strMeal;
-
     }
-
 };
 
+
+// search result section
 function SearchMeal() {
     let mealInput = document.getElementById("meal-input").value;
     mealInput = mealInput.trim();
@@ -84,6 +85,8 @@ function SearchMeal() {
     }
 }
 
+
+// details of main page food items after click
 function displayMealDetail() {
 
     let title2 = document.getElementsByClassName("card-title");
