@@ -1,4 +1,5 @@
-fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
+// fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
+fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
     .then(res => res.json())
     .then(data => displayMeals(data));
 
@@ -82,5 +83,50 @@ function SearchMeal() {
                 }
                 // }
             });
+    }
+}
+
+function displayMealDetail() {
+    // const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`
+
+    let title2 = document.getElementsByClassName("card-title");
+    for (let i = 0; i < title2.length; i++) {
+        const element2 = title2[i];
+        // console.log(element2);
+
+        // const title = document.getElementById("itemMenuTitle1").innerText;
+        let title = element2.innerText;
+        console.log(title);
+        // return title;
+
+        let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${title}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                for (let i = 0; i < data.meals.length; i++) {
+                    const element = data.meals[i];
+
+                    document.getElementById("mealDetail-click").innerHTML = `
+                    <div id="box-div">
+                    <h1>${element.strMeal}</h1>
+                    <h4>${element.strArea}</h4>
+                    <h5>${element.strCategory}</h5>
+                    <ul>
+                    <li>${element.strIngredient1}</li>
+                    <li>${element.strIngredient2}</li>
+                    <li>${element.strIngredient3}</li>
+                    <li>${element.strIngredient4}</li>
+                    <li>${element.strIngredient5}</li>
+                    <li>${element.strIngredient6}</li>
+                    <li>${element.strIngredient7}</li>
+                    <li>${element.strIngredient8}</li>
+                    <li>${element.strIngredient9}</li>
+                    </ul>
+                    <p>${element.strInstructions}</p></div>
+                `;
+                }
+            });
+        // break;
     }
 }

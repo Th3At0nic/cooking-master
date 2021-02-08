@@ -1,6 +1,7 @@
-body{
+body {
     background-color: goldenrod;
 }
+
 #meal-image {
     width: 100%
 }
@@ -17,5 +18,17 @@ body{
 .card-title {
     font-size: 30px;
     font-weight: 700;
-    color:rgb(240, 26, 69) ;
+    color: rgb(240, 26, 69);
+}
+
+#mealDetail-click {
+    border-radius: 20px;
+    box-shadow: 9px 9px 20px;
+    color: rgb(35, 11, 97);
+    margin-bottom: 100px;
+    background-color: lightgoldenrodyellow;
+}
+
+#box-div {
+    padding: 30px;
 }
