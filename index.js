@@ -126,3 +126,6 @@ function displayMealDetail() {
 
     }
 }
+
+//im sorry that i couldn't do it properly, i tried my best but failed.
+//this concept isnt fully clear to me.hope you will not feel bore to check this code. thanks
