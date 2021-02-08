@@ -1,4 +1,3 @@
-// fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
 fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
     .then(res => res.json())
     .then(data => displayMeals(data));
@@ -50,13 +49,10 @@ function SearchMeal() {
             .then(data => {
                 console.log(data);
                 console.log(data.meals[0].strMeal);
-                // if (mealInput != data.meals) {
-                //     alert(`No meal found with name \"${mealInput}\". Please try again.`);
-                // } else {
-                //     displayFoundMeals();
-                // }
+                if (mealInput === null) {
+                    alert(`No meal found with name \"${mealInput}\". Please try again.`);
+                }
 
-                // function displayFoundMeals() {
                 for (let i = 0; i < data.meals.length; i++) {
                     const element = data.meals[i];
                     const item = element.strMeal;
@@ -81,31 +77,30 @@ function SearchMeal() {
                         document.getElementById("instruction").innerHTML = data.meals[i].strInstructions;
                     }
                 }
-                // }
+
             });
     }
 }
 
 function displayMealDetail() {
-    // const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`
 
     let title2 = document.getElementsByClassName("card-title");
     for (let i = 0; i < title2.length; i++) {
         const element2 = title2[i];
-        // console.log(element2);
-
-        // const title = document.getElementById("itemMenuTitle1").innerText;
-        let title = element2.innerText;
+        console.log(element2);
+        var title = element2.innerText;
         console.log(title);
-        // return title;
 
         let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${title}`;
+        console.log(url);
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+
                 for (let i = 0; i < data.meals.length; i++) {
                     const element = data.meals[i];
+                    console.log(element);
 
                     document.getElementById("mealDetail-click").innerHTML = `
                     <div id="box-div">
@@ -125,8 +120,9 @@ function displayMealDetail() {
                     </ul>
                     <p>${element.strInstructions}</p></div>
                 `;
+
                 }
             });
-        // break;
+
     }
 }
