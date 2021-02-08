@@ -61,6 +61,8 @@ function SearchMeal() {
                         alert(`No meal found with name \"${mealInput}\". Please try again.`);
                     } else {
                         document.getElementById("meal-container").innerHTML = data.meals[i].strMeal;
+                        document.getElementById("meal-area").innerHTML = data.meals[i].strArea;
+                        document.getElementById("meal-category").innerHTML = data.meals[i].strCategory;
                         document.getElementById("meal-image").src = data.meals[i].strMealThumb;
                         document.getElementById("ingredient").innerHTML = "Ingredients";
                         document.getElementById("list1").innerHTML = data.meals[i].strIngredient1;

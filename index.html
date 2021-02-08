@@ -25,7 +25,7 @@
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                         <a class="nav-link" href="#">About</a>
-                        <a class="nav-link" href="#">Recipes</a>
+                        <a class="nav-link" href="#recipes">Recipes</a>
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Blog</a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                 <div id="mealDetail-click">
 
                 </div>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div id="recipes" class="row row-cols-1 row-cols-md-3 g-4">
                     <button onclick="displayMealDetail()">
                         <div class="col">
                             <div class="card h-100">
@@ -156,6 +156,8 @@
                 <div class="col-md-5">
                     <div class="col-md-11">
                         <h1 id="meal-container"></h1>
+                        <h4 id="meal-area"></h4>
+                        <h6 id="meal-category"></h6>
                         <img id="meal-image" src="" alt="">
                     </div>
                 </div>
