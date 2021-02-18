@@ -7,7 +7,7 @@ const displayMeals = data => {
     console.log(data);
     const mealDiv = document.getElementById("mealDb");
     for (let i = 0; i < data.meals.length; i++) {
-        
+
         document.getElementById("itemMenuImg1").src = data.meals[0].strMealThumb;
         document.getElementById("itemMenuTitle1").innerText = data.meals[0].strMeal;
         document.getElementById("itemMenuImg2").src = data.meals[1].strMealThumb;
@@ -85,18 +85,26 @@ function SearchMeal() {
     }
 }
 
-
 // details of main page food items after click
 function displayMealDetail() {
 
+    var cardTitles = [];
+    console.log(cardTitles);
     let title2 = document.getElementsByClassName("card-title");
     for (let i = 0; i < title2.length; i++) {
-        const element2 = title2[i];
+        var element2 = title2[i];
         console.log(element2);
         var title = element2.innerText;
         console.log(title);
+        cardTitles.push(title);
+    }
 
-        let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${title}`;
+    for (let i = 0; i < cardTitles.length; i++) {
+        var name = cardTitles[i];
+        console.log(name);
+
+        // }
+        let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())
